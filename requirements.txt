@@ -1,0 +1,6 @@
+mysql.connector
+pymssql
+flask
+Flask
+requests
+hashlib

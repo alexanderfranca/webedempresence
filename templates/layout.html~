@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>EDEM</title>    
+  </head>
+
+
+<body>
+
+{% if 'access_token' in session %}
+    <div id='menu'>
+
+       <a href="{{ url_for('show_devices') }}">Show Devices</a>&nbsp;|&nbsp;
+       <a href="{{ url_for('public_stations') }}">Public Stations</a>&nbsp;|&nbsp;
+       <a href="{{ url_for('camera_events') }}">Camera Events</a>&nbsp;|&nbsp;
+       <a href="{{ url_for('stations') }}">Your Stations</a>&nbsp;|&nbsp;
+       <a href="{{ url_for('query_station') }}">Query Station Data</a>&nbsp;|&nbsp;
+       <a href="{{ url_for('home', reset='reset') }}">Logout</a>&nbsp;|&nbsp;
+       <hr>
+       [Your Access Token: {{ session['access_token'] }} ]
+       <hr>
+       For 'dummy' data, add "?dummy" at the end of the URL.
+       <br />
+       Example: http://localhost:5000/camera_events?dummy
+       <hr>
+       For direct URL request, put access_token at the end of the URL.
+       <br />
+       Example: http://localhost:5000/camera_events?dummy&access_token=your_token
+       <hr>
+       For direct generating Camera events you can use the following:
+       <br />
+       http://localhost:5000/camera_events?dummy&access_token={{session['access_token']}}
+       <hr>
+
+    </div>
+{% endif %}
+
+{% block content %}
+
+{% endblock %}
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% for presence in presences %}
+
+{{ presence['day'] }}/{{ presence['month'] }}/{{presence['year']}} - {{presence['hour']}}:{{presence['minute']}}:{{presence['second']}}
+<br />
+
+{% endfor %}
+
+
+{% endblock %}

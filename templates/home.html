@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+{{ message }}
+
+<form action="/get_link" method='POST'>
+
+    Matricula do aluno: <input type='text' name='matricula'>
+    <p>
+    CPF do responsavel: <input type='text' name='cpf'>
+    <p>
+    <input type='submit' value='abrir'>
+
+</form>
+
+
+{% endblock %}
